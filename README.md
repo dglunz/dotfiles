@@ -1,5 +1,8 @@
 #I ❤ ~/
-Clone this shit into your homedir.  
+#####Clone this shit into your homedir.  
+```Shell
+git clone https://github.com/dglunz/dotfiles.git
+```
 #####Make `setup.sh` executable.  
 ```Shell
 chmod +x setup.sh
