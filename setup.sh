@@ -57,4 +57,4 @@ fi
 }
 
 install_zsh
-
+git submodule update --init
