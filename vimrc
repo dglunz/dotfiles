@@ -1,3 +1,4 @@
+execute pathogen#infect()
 set rtp+=/usr/local/go/misc/vim
 filetype plugin indent on
 syntax on
@@ -12,11 +13,10 @@ imap jk <Esc>
 nnoremap ; :
 vnoremap ; :
 
-execute pathogen#infect()
 autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 autocmd BufRead,BufNewFile *.md setlocal spell
-au BufRead,BufNewFile *.md setlocal textwidth=80
+autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 map <C-m> :NERDTreeToggle<CR>
 
 " Easy copy pasting
