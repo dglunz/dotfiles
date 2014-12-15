@@ -81,7 +81,6 @@ cnoremap <C-k> <C-f>d$<C-c><End>
 cnoremap <C-y> <C-r><C-o>"
 cnoremap <C-d> <Right><C-h>
 
-
 "" strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
@@ -99,29 +98,4 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " replaces %/ with current directory, and %% with current file
 cmap %/ <C-R>=expand("%:p:h")."/"<CR>
 cmap %% <C-R>=expand("%")<CR>
-
-" ========== Pathogen plugins ==========
-"
-" ZoomWin                     https://github.com/vim-scripts/ZoomWin.git
-" nerdtree                    https://github.com/scrooloose/nerdtree.git
-" supertab                    https://github.com/ervandew/supertab.git
-" unite.vim                   https://github.com/Shougo/unite.vim.git
-" vim-coffee-script           https://github.com/kchmck/vim-coffee-script.git
-" vim-commentary              https://github.com/tpope/vim-commentary.git
-" vim-cucumber                https://github.com/tpope/vim-cucumber.git
-" vim-elixir                  https://github.com/elixir-lang/vim-elixir.git
-" vim-endwise                 https://github.com/tpope/vim-endwise.git
-" vim-fish                    https://github.com/dag/vim-fish.git
-" vim-fugitive                https://github.com/tpope/vim-fugitive.git
-" vim-haml                    https://github.com/tpope/vim-haml.git
-" hdevtools                   https://github.com/bitc/hdevtools.git
-" vim-javascript              https://github.com/pangloss/vim-javascript.git
-" vim-markdown                https://github.com/tpope/vim-markdown.git
-" vim-powerline               https://github.com/Lokaltog/vim-powerline.git
-" vim-repeat                  https://github.com/tpope/vim-repeat.git
-" vim-rspec                   https://github.com/skwp/vim-rspec.git
-" vim-ruby                    https://github.com/vim-ruby/vim-ruby.git
-" vim-surround                https://github.com/tpope/vim-surround.git
-" vim-textobj-rubyblock       https://github.com/nelstrom/vim-textobj-rubyblock.git
-" vim-textobj-user            https://github.com/kana/vim-textobj-user.git
 
