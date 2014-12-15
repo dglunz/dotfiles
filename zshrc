@@ -5,13 +5,10 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="terminalparty"
 
 # Disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
+# DISABLE_AUTO_TITLE="true"
 
 # Enable command auto-correction.
 ENABLE_CORRECTION="true"
-
-# Display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
 
 # Plugins (plugins can be found in ~/.oh-my-zsh/plugins/*)
 plugins=(git rails)
@@ -37,6 +34,9 @@ alias -s rb=vim
 alias -s go=vim
 alias -s html=open
 
+source $ZSH/oh-my-zsh.sh
+
+
 # Setup zsh-autosuggestions
 source ~/.zsh-autosuggestions/autosuggestions.zsh
 
@@ -44,6 +44,10 @@ source ~/.zsh-autosuggestions/autosuggestions.zsh
 zle-line-init() {
     zle autosuggest-start
 }
+
 zle -N zle-line-init
 
-source $ZSH/oh-my-zsh.sh
+# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+# zsh-autosuggestions is designed to be unobtrusive)
+bindkey '^T' autosuggest-toggle
+
