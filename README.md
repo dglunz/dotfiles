@@ -11,4 +11,7 @@ chmod +x setup.sh
 ```Shell
 ./setup.sh
 ```
-
+#####Update the plugins.
+```Shell
+git submodule foreach git pull origin master
+```
