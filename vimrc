@@ -20,7 +20,7 @@ autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 map <C-m> :NERDTreeToggle<CR>
 
 " Easy copy pasting
-map <F2> :.w !pbcopy<CR><CR>
+map <F2> :.!pbcopy<CR><CR>
 map <F3> :r !pbpaste<CR>
 
 let g:vim_markdown_folding_disabled=1
@@ -32,6 +32,13 @@ nnoremap <Down> :echoe "Use j"<CR>
 
 " Completion suggestions
 inoremap <C-@> <C-n>
+
+" FuzzyFile search basic setup
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 "" ==========  These come from Mislav (http://mislav.uniqpath.com/2011/12/vim-revisited/)  ==========
 set nocompatible                " choose no compatibility with legacy vi
