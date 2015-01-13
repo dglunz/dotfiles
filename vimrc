@@ -18,6 +18,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 map <C-m> :NERDTreeToggle<CR>
+let NERDTreeMapOpenInTab  = '<c-t>'
+let NERDTreeMapOpenSplit  = '<c-x>'
+let NERDTreeMapOpenVSplit = '<c-v>'
 
 " Easy copy pasting
 map <F2> :.!pbcopy<CR><CR>
