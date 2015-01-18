@@ -22,3 +22,18 @@
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/vim-numbertoggle"]
+	path = vim/bundle/vim-numbertoggle
+	url = git://github.com/jeffkreeftmeijer/vim-numbertoggle.git
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline
+[submodule "vim/bundle/ack.vim"]
+	path = vim/bundle/ack.vim
+	url = git@github.com:mileszs/ack.vim.git
+[submodule "vim/bundle/YankRing.vim"]
+	path = vim/bundle/YankRing.vim
+	url = git@github.com:vim-scripts/YankRing.vim.git
+[submodule "vim/bundle/rainbow_parentheses.vim"]
+	path = vim/bundle/rainbow_parentheses.vim
+	url = git@github.com:kien/rainbow_parentheses.vim.git

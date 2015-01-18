@@ -5,22 +5,33 @@ syntax on
 
 colorscheme Tomorrow-Night
 
+" The Leader
+let mapleader = "\<Space>"
+nnoremap <leader>a :Ack
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :wq<CR>
+nnoremap <leader>R :RainbowParenthesesToggle<Enter>
+nnoremap <leader>o :CtrlP<CR>
+nnoremap <leader>p :CtrlP<CR>
+
+" Use relative number in normal mode and absolute number in insert mode
+set relativenumber
+set number
+set hidden
+
 " Because my pinky can't handle reaching esc
 imap kj <Esc>
 imap jk <Esc>
 
-" Because semicolons are worthless outside of insert mode
-nnoremap ; :
-vnoremap ; :
+let g:airline#extensions#tabline#enabled = 1
 
-autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-autocmd BufRead,BufNewFile *.md setlocal spell
-autocmd BufRead,BufNewFile *.md setlocal textwidth=80
-map <C-m> :NERDTreeToggle<CR>
 let NERDTreeMapOpenInTab  = '<c-t>'
 let NERDTreeMapOpenSplit  = '<c-x>'
 let NERDTreeMapOpenVSplit = '<c-v>'
+map <C-t> :NERDTreeToggle<CR>
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Easy copy pasting
 map <F2> :.!pbcopy<CR><CR>
@@ -37,7 +48,6 @@ nnoremap <Down> :echoe "Use j"<CR>
 inoremap <C-@> <C-n>
 
 " FuzzyFile search basic setup
-let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
@@ -66,7 +76,6 @@ set nowritebackup                                   " only in case you don't wan
 set noswapfile                                      " no swap files
 set scrolloff=4                                     " adds top/bottom buffer between cursor and window
 set cursorline                                      " colours the line the cursor is on
-set number                                          " line numbers
 
 " easier navigation between split windows
 nnoremap <c-j> <c-w>j
