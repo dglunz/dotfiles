@@ -12,7 +12,10 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>q :wq<CR>
 nnoremap <leader>R :RainbowParenthesesToggle<Enter>
 nnoremap <leader>o :CtrlP<CR>
-nnoremap <leader>p :CtrlP<CR>
+nnoremap <leader>f /
+nnoremap <leader>n :bn<CR>
+nnoremap <leader>p :bp<CR>
+nnoremap <leader>d :bd<CR>
 
 " Use relative number in normal mode and absolute number in insert mode
 set relativenumber
@@ -48,6 +51,7 @@ nnoremap <Down> :echoe "Use j"<CR>
 inoremap <C-@> <C-n>
 
 " FuzzyFile search basic setup
+let g:ctrlp_map = ''
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
