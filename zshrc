@@ -11,14 +11,14 @@ ZSH_THEME="terminalparty"
 ENABLE_CORRECTION="true"
 
 # Plugins (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(git rails)
+plugins=(git rails tmux)
 
 # User configuration
 export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 export GOPATH=~/go
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ohmyzsh="vim ~/.oh-my-zsh"
 
 # Git Aliases
 alias gs="git status"

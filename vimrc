@@ -119,7 +119,7 @@ function! <SID>StripTrailingWhitespaces()
   let @/=_s
   call cursor(l, c)
 endfunction
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,ruby,python,go,html,erb autocmd BufWritePre :call <SID>StripTrailingWhitespaces()
 
 " replaces %/ with current directory, and %% with current file
 cmap %/ <C-R>=expand("%:p:h")."/"<CR>
