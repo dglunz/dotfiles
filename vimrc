@@ -8,7 +8,9 @@ colorscheme Tomorrow-Night
 " The Leader
 let mapleader = "\<Space>"
 nnoremap <leader>a :Ack
-nnoremap <leader>w :w<CR>
+nnoremap <leader>Q :q!<CR>
+nnoremap <Leader>w :w<cr>:VroomRunTestFile<CR>
+nnoremap <Leader>t :VroomRunNearestTest<CR>
 nnoremap <leader>q :wq<CR>
 nnoremap <leader>R :RainbowParenthesesToggle<Enter>
 nnoremap <leader>o :CtrlP<CR>
@@ -16,6 +18,7 @@ nnoremap <leader>f /
 nnoremap <leader>n :bn<CR>
 nnoremap <leader>p :bp<CR>
 nnoremap <leader>d :bd<CR>
+nnoremap <leader>h :set hlsearch!<CR>
 
 " Use relative number in normal mode and absolute number in insert mode
 set relativenumber
@@ -119,7 +122,7 @@ function! <SID>StripTrailingWhitespaces()
   let @/=_s
   call cursor(l, c)
 endfunction
-autocmd FileType c,cpp,ruby,python,go,html,erb autocmd BufWritePre :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,ruby,python,go,html,erb,rb autocmd BufWritePre :call <SID>StripTrailingWhitespaces()
 
 " replaces %/ with current directory, and %% with current file
 cmap %/ <C-R>=expand("%:p:h")."/"<CR>

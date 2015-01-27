@@ -43,3 +43,6 @@
 [submodule "vim/bundle/yankring"]
 	path = vim/bundle/yankring
 	url = https://github.com/vim-scripts/YankRing.vim.git
+[submodule "vim/bundle/vim-vroom"]
+	path = vim/bundle/vim-vroom
+	url = git://github.com/skalnik/vim-vroom.git
