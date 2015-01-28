@@ -9,8 +9,8 @@ colorscheme Tomorrow-Night
 let mapleader = "\<Space>"
 nnoremap <leader>a :Ack
 nnoremap <leader>Q :q!<CR>
-nnoremap <Leader>w :w<cr>:VroomRunTestFile<CR>
-nnoremap <Leader>t :VroomRunNearestTest<CR>
+nnoremap <Leader>w :w<cr>
+nnoremap <Leader>t :VroomRunTestFile<CR>
 nnoremap <leader>q :wq<CR>
 nnoremap <leader>R :RainbowParenthesesToggle<Enter>
 nnoremap <leader>o :CtrlP<CR>
