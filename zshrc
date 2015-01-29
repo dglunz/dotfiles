@@ -11,7 +11,7 @@ ZSH_THEME="terminalparty"
 ENABLE_CORRECTION="true"
 
 # Plugins (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(git rails tmux)
+plugins=(git rails)
 
 # User configuration
 export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
@@ -25,10 +25,12 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias gs="git status"
 alias gd="git diff --patience --ignore-space-change"
 alias gc="git checkout"
+alias gcb="git checkout -b"
 alias gb="git branch"
 alias ga="git add"
 alias gh="git hist"
 alias be="bundle exec"
+alias gcm="git commit -m"
 
 # Open according to suffix
 alias -s rb=vim
@@ -36,7 +38,6 @@ alias -s go=vim
 alias -s html=open
 
 source $ZSH/oh-my-zsh.sh
-
 
 # Setup zsh-autosuggestions
 source ~/.zsh-autosuggestions/autosuggestions.zsh

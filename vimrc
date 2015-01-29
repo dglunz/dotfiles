@@ -1,5 +1,6 @@
 execute pathogen#infect()
 set rtp+=/usr/local/go/misc/vim
+set shell=zsh\ --login
 filetype plugin indent on
 syntax on
 
@@ -10,7 +11,7 @@ let mapleader = "\<Space>"
 nnoremap <leader>a :Ack
 nnoremap <leader>Q :q!<CR>
 nnoremap <Leader>w :w<cr>
-nnoremap <Leader>t :VroomRunTestFile<CR>
+nnoremap <Leader>t :!bundle exec rake test<CR>
 nnoremap <leader>q :wq<CR>
 nnoremap <leader>R :RainbowParenthesesToggle<Enter>
 nnoremap <leader>o :CtrlP<CR>
