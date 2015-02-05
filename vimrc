@@ -8,10 +8,10 @@ colorscheme Tomorrow-Night
 
 " The Leader
 let mapleader = "\<Space>"
-nnoremap <leader>a :Ack
 nnoremap <leader>Q :q!<CR>
 nnoremap <Leader>w :w<cr>
-nnoremap <Leader>t :!bundle exec rake test<CR>
+nnoremap <Leader>t :w<CR>:!rspec<CR>
+nnoremap <Leader>a :!rubocop -a %<CR>
 nnoremap <leader>q :wq<CR>
 nnoremap <leader>R :RainbowParenthesesToggle<Enter>
 nnoremap <leader>o :CtrlP<CR>
@@ -123,7 +123,7 @@ function! <SID>StripTrailingWhitespaces()
   let @/=_s
   call cursor(l, c)
 endfunction
-autocmd FileType c,cpp,ruby,python,go,html,erb,rb autocmd BufWritePre :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,py,go,html,erb,rb autocmd BufWritePre :call <SID>StripTrailingWhitespaces()
 
 " replaces %/ with current directory, and %% with current file
 cmap %/ <C-R>=expand("%:p:h")."/"<CR>

@@ -24,7 +24,6 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 # Git Aliases
 alias gs="git status"
 alias gd="git diff --patience --ignore-space-change"
-alias gc="git checkout"
 alias gcb="git checkout -b"
 alias gb="git branch"
 alias ga="git add"
