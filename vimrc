@@ -10,7 +10,6 @@ colorscheme Tomorrow-Night
 let mapleader = "\<Space>"
 nnoremap <leader>Q :q!<CR>
 nnoremap <Leader>w :w<cr>
-nnoremap <Leader>t :w<CR>:!rspec<CR>
 nnoremap <Leader>a :!rubocop -a %<CR>
 nnoremap <leader>q :wq<CR>
 nnoremap <leader>R :RainbowParenthesesToggle<Enter>
@@ -20,6 +19,11 @@ nnoremap <leader>n :bn<CR>
 nnoremap <leader>p :bp<CR>
 nnoremap <leader>d :bd<CR>
 nnoremap <leader>h :set hlsearch!<CR>
+nnoremap <leader>b :Gblame<CR>
+nnoremap <leader>gh :Gbrowse<CR>
+nnoremap <Leader>s :call RunNearestSpec()<CR>
+nnoremap <Leader>t :w<CR>:call RunAllSpecs()<CR>
+
 
 " Use relative number in normal mode and absolute number in insert mode
 set relativenumber
