@@ -29,12 +29,16 @@ alias gb="git branch"
 alias ga="git add"
 alias gh="git hist"
 alias be="bundle exec"
+alias gm="git checkout master"
 alias gcm="git commit -m"
 
 # Open according to suffix
 alias -s rb=vim
 alias -s go=vim
 alias -s html=open
+
+# Random Aliases
+alias notes="vim ~/Desktop/notes.txt"
 
 source $ZSH/oh-my-zsh.sh
 
