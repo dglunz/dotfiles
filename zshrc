@@ -39,6 +39,9 @@ alias -s html=open
 
 # Random Aliases
 alias notes="vim ~/Desktop/notes.txt"
+alias ind="cd ~/Documents/codes/circle"
+alias fs="foreman start"
+alias v="vim"
 
 source $ZSH/oh-my-zsh.sh
 

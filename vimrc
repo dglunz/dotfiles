@@ -23,6 +23,8 @@ nnoremap <leader>b :Gblame<CR>
 nnoremap <leader>gh :Gbrowse<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>t :w<CR>:call RunAllSpecs()<CR>
+nnoremap <Leader>1 :colo Tomorrow-Night-Eighties<CR>
+nnoremap <Leader>2 :colo Tomorrow<CR>
 
 
 " Use relative number in normal mode and absolute number in insert mode
@@ -49,11 +51,6 @@ map <F2> :.!pbcopy<CR><CR>
 map <F3> :r !pbpaste<CR>
 
 let g:vim_markdown_folding_disabled=1
-
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
 
 " Completion suggestions
 inoremap <C-@> <C-n>
