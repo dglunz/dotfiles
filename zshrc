@@ -42,6 +42,7 @@ alias notes="vim ~/Desktop/notes.txt"
 alias ind="cd ~/Documents/codes/circle"
 alias fs="foreman start"
 alias v="vim"
+alias fucking="sudo"
 
 source $ZSH/oh-my-zsh.sh
 

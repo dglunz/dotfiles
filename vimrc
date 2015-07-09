@@ -25,7 +25,7 @@ nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>t :w<CR>:call RunAllSpecs()<CR>
 nnoremap <Leader>1 :colo Tomorrow-Night-Eighties<CR>
 nnoremap <Leader>2 :colo Tomorrow<CR>
-
+nmap <silent> <leader>d <Plug>DashSearch
 
 " Use relative number in normal mode and absolute number in insert mode
 set relativenumber
