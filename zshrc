@@ -31,6 +31,7 @@ alias gh="git hist"
 alias be="bundle exec"
 alias gm="git checkout master"
 alias gcm="git commit -m"
+alias gbd="git branch | grep -v "master" | xargs git branch -D"
 
 # Open according to suffix
 alias -s rb=vim
