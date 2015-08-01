@@ -11,13 +11,14 @@ ZSH_THEME="terminalparty"
 ENABLE_CORRECTION="true"
 
 # Plugins (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(git rails)
+plugins=(git rails rbenv)
 
 # User configuration
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
@@ -40,7 +41,9 @@ alias -s html=open
 
 # Random Aliases
 alias notes="vim ~/Desktop/notes.txt"
-alias ind="cd ~/Documents/codes/circle"
+alias ind="cd ~/Documents/codes/upknown"
+alias up="cd ~/Documents/codes/upknown"
+alias dot="cd ~/dotfiles"
 alias fs="foreman start"
 alias v="vim"
 alias fucking="sudo"
