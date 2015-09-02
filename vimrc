@@ -25,6 +25,7 @@ nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>t :w<CR>:call RunAllSpecs()<CR>
 nnoremap <Leader>1 :colo Tomorrow-Night-Eighties<CR>
 nnoremap <Leader>2 :colo Tomorrow<CR>
+nnoremap <Leader>dd :BufOnly<CR>
 nmap <silent> <leader>l <Plug>DashSearch
 
 " Use relative number in normal mode and absolute number in insert mode
@@ -59,7 +60,7 @@ inoremap <C-@> <C-n>
 let g:ctrlp_map = ''
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/components/*,*/bower_modules/*
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 "" ==========  These come from Mislav (http://mislav.uniqpath.com/2011/12/vim-revisited/)  ==========

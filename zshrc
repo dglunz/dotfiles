@@ -15,10 +15,11 @@ plugins=(git rails rbenv)
 
 # User configuration
 eval "$(rbenv init -)"
+export PATH=/usr/local/lib/node_modules/:$PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
-export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
+export GOPATH="~/go"
+export PATH="$PATH:$GOPATH/bin"
 
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
@@ -64,3 +65,6 @@ zle -N zle-line-init
 # zsh-autosuggestions is designed to be unobtrusive)
 bindkey '^T' autosuggest-toggle
 
+NPM_PACKAGES=/Users/dglunz/.npm-packages
+NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+PATH="$NPM_PACKAGES/bin:$PATH"
