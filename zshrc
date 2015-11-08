@@ -42,7 +42,6 @@ alias -s html=open
 
 # Random Aliases
 alias notes="vim ~/Desktop/notes.txt"
-alias ind="cd ~/Documents/codes/upknown"
 alias up="cd ~/Documents/codes/upknown"
 alias dot="cd ~/dotfiles"
 alias fs="foreman start"

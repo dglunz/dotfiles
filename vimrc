@@ -4,7 +4,7 @@ set shell=zsh\ --login
 filetype plugin indent on
 syntax on
 
-colorscheme Tomorrow-Night-Eighties
+colorscheme Tomorrow-Night
 
 " The Leader
 let mapleader = "\<Space>"
