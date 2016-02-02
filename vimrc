@@ -5,6 +5,10 @@ filetype plugin indent on
 syntax on
 
 colorscheme Tomorrow-Night
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
 
 " The Leader
 let mapleader = "\<Space>"
@@ -13,6 +17,7 @@ nnoremap <Leader>w :w<cr>
 nnoremap <Leader>a :!rubocop -a %<CR>
 nnoremap <leader>q :wq<CR>
 nnoremap <leader>R :RainbowParenthesesToggle<Enter>
+nnoremap <leader>r :NERDTreeFind<cr>
 nnoremap <leader>o :CtrlP<CR>
 nnoremap <leader>f /
 nnoremap <leader>n :bn<CR>
@@ -48,7 +53,7 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Easy copy pasting
-map <F2> :.!pbcopy<CR><CR>
+map <F2> :w !pbcopy<CR>
 map <F3> :r !pbpaste<CR>
 
 let g:vim_markdown_folding_disabled=1
@@ -60,7 +65,7 @@ inoremap <C-@> <C-n>
 let g:ctrlp_map = ''
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/components/*,*/bower_modules/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/components/*,*/bower_modules/*,*/build/*
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 "" ==========  These come from Mislav (http://mislav.uniqpath.com/2011/12/vim-revisited/)  ==========
@@ -84,7 +89,7 @@ set incsearch                   " incremental searching
 set nobackup                                        " no backup files
 set nowritebackup                                   " only in case you don't want a backup file while editing
 set noswapfile                                      " no swap files
-set scrolloff=4                                     " adds top/bottom buffer between cursor and window
+"set scrolloff=4                                     " adds top/bottom buffer between cursor and window
 set cursorline                                      " colours the line the cursor is on
 
 " easier navigation between split windows
@@ -125,7 +130,7 @@ function! <SID>StripTrailingWhitespaces()
   let @/=_s
   call cursor(l, c)
 endfunction
-autocmd FileType c,cpp,py,go,html,erb,rb autocmd BufWritePre :call <SID>StripTrailingWhitespaces()
+autocmd FileType coffee,cpp,py,go,html,jade,erb,rb,js autocmd BufWritePre :call <SID>StripTrailingWhitespaces()
 
 " replaces %/ with current directory, and %% with current file
 cmap %/ <C-R>=expand("%:p:h")."/"<CR>

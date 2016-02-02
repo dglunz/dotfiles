@@ -33,7 +33,9 @@ alias gh="git hist"
 alias be="bundle exec"
 alias gm="git checkout master"
 alias gcm="git commit -m"
-alias gbd="git branch | grep -v "master" | xargs git branch -D"
+alias gbd="git branch | grep -v 'master' | xargs git branch -D"
+alias gpo="git push origin"
+alias gpl="git pull origin master"
 
 # Open according to suffix
 alias -s rb=vim
@@ -42,10 +44,13 @@ alias -s html=open
 
 # Random Aliases
 alias notes="vim ~/Desktop/notes.txt"
+alias pas="cd ~/Documents/codes/pana/sabre-soap"
+alias pag="cd ~/Documents/codes/pana/pana-agent"
+alias pap="cd ~/Documents/codes/pana/pana-api"
 alias up="cd ~/Documents/codes/upknown"
 alias dot="cd ~/dotfiles"
 alias fs="foreman start"
-alias v="vim"
+alias v="gvim"
 alias fucking="sudo"
 
 source $ZSH/oh-my-zsh.sh
