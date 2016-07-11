@@ -36,6 +36,11 @@ nnoremap <Leader>2 :colo Tomorrow<CR>
 nnoremap <Leader>dd :BufOnly<CR>
 nmap <silent> <leader>l <Plug>DashSearch
 nnoremap <Leader>l :CoffeeLint!<CR>
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
 
 :command Log :normal i console.log<ESC>
 
@@ -92,11 +97,11 @@ set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 
 "" ==========  These come from JoshCheek (https://github.com/joshcheek/dotfiles)  ==========
-set nobackup                                        " no backup files
-set nowritebackup                                   " only in case you don't want a backup file while editing
-set noswapfile                                      " no swap files
-"set scrolloff=4                                     " adds top/bottom buffer between cursor and window
-set cursorline                                      " colours the line the cursor is on
+set nobackup                 " no backup files
+set nowritebackup            " only in case you don't want a backup file while editing
+set noswapfile               " no swap files
+"set scrolloff=4             " adds top/bottom buffer between cursor and window
+set cursorline               " colours the line the cursor is on
 
 " easier navigation between split windows
 nnoremap <c-j> <c-w>j
