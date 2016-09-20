@@ -3,6 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. ~/.oh-my-zsh/themes/
 ZSH_THEME="terminalparty"
+PROMPT='%(?,%{$fg[green]%},%{$fg[red]%})$ '
 
 # Disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -18,10 +19,10 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/lib/node_modules/:$PATH"
 export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
-export GOPATH="~/go"
-export PATH="$PATH:$GOPATH/bin"
 
-alias ohmyzsh="vim ~/.oh-my-zsh"
+# Go config
+export GOPATH=$HOME/go
+export PATH="$PATH:$GOPATH/bin"
 
 # Git Aliases
 alias gs="git status"
@@ -46,18 +47,21 @@ alias -s html=open
 # Random Aliases
 alias mo="cd ~/Documents/codes/momakase"
 alias fh="cd ~/Documents/codes/realty"
-alias notes="vim ~/Desktop/notes.txt"
+alias up="cd ~/Documents/codes/upknown"
+alias notes="vim ~/.notes.txt"
 alias todo="vim ~/Desktop/todo.txt"
+alias dot="cd ~/dotfiles"
+alias fs="foreman start"
+alias gv="gvim"
+alias v="vim"
+alias fucking="sudo"
+
+# Current workflow
 alias pas="cd ~/Documents/codes/pana/sabre-soap"
 alias pag="cd ~/Documents/codes/pana/pana-agent"
 alias paw="cd ~/Documents/codes/pana/pana-web"
 alias pap="cd ~/Documents/codes/pana/pana-api"
 alias pad="cd ~/Documents/codes/pana/pana-docs"
-alias up="cd ~/Documents/codes/upknown"
-alias dot="cd ~/dotfiles"
-alias fs="foreman start"
-alias v="gvim"
-alias fucking="sudo"
 alias docs="open file:///Users/dannyglunz/Documents/codes/theme-marketing/docs/index.html"
 
 source $ZSH/oh-my-zsh.sh

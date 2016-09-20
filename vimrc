@@ -3,6 +3,7 @@ set rtp+=/usr/local/go/misc/vim
 set shell=zsh\ --login
 filetype plugin indent on
 syntax on
+set ttyfast
 
 colorscheme Tomorrow-Night
 set guioptions-=r
@@ -13,36 +14,49 @@ set colorcolumn=80
 
 " The Leader
 let mapleader = "\<Space>"
-nnoremap <leader>c :Log<CR>
+nnoremap <Leader>1 :colo Tomorrow-Night-Eighties<CR>
+nnoremap <Leader>2 :colo Tomorrow<CR>
+
 nnoremap <leader>y :TagbarToggle<CR>
 nnoremap <leader>Q :q!<CR>
 nnoremap <Leader>w :w<cr>
-nnoremap <Leader>a :!rubocop -a %<CR>
 nnoremap <leader>q :wq<CR>
-nnoremap <leader>R :RainbowParenthesesToggle<Enter>
 nnoremap <leader>r :NERDTreeFind<cr>
 nnoremap <leader>o :CtrlP<CR>
 nnoremap <leader>f /
-nnoremap <leader>n :bn<CR>
-nnoremap <leader>p :bp<CR>
-nnoremap <leader>d :bd<CR>
 nnoremap <leader>h :set hlsearch!<CR>
-nnoremap <leader>b :Gblame<CR>
-nnoremap <leader>gh :Gbrowse<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>t :w<CR>:call RunAllSpecs()<CR>
-nnoremap <Leader>1 :colo Tomorrow-Night-Eighties<CR>
-nnoremap <Leader>2 :colo Tomorrow<CR>
-nnoremap <Leader>dd :BufOnly<CR>
-nmap <silent> <leader>l <Plug>DashSearch
-nnoremap <Leader>l :CoffeeLint!<CR>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
+" Buffer shortcuts
+nnoremap <leader>n :bn<CR>
+nnoremap <leader>p :bp<CR>
+nnoremap <leader>d :bd<CR>
+nnoremap <Leader>ad :BufOnly<CR>
+
+" Git shortcuts
+nnoremap <leader>b :Gblame<CR>
+nnoremap <leader>gh :Gbrowse<CR>
+nnoremap <Leader>t :GoTest<CR>
+
+" .js
+" nnoremap <Leader>t :w<CR>:call RunAllSpecs()<CR>
+nnoremap <Leader>s :call RunNearestSpec()<CR>
+nnoremap <Leader>l :CoffeeLint!<CR>
+nnoremap <leader>c :Log<CR>
+nnoremap <leader>R :RainbowParenthesesToggle<Enter>
+:command Log :insert console.log<ESC>
+
+" .go
+nnoremap <leader>v :GoDef<CR>
+nnoremap <leader>l :GoDoc<CR>
+let g:go_jump_to_error = 0
+
+" .rb
+nnoremap <Leader>a :!rubocop -a %<CR>
+
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
-
-:command Log :normal i console.log<ESC>
 
 " Use relative number in normal mode and absolute number in insert mode
 set relativenumber
@@ -64,8 +78,8 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Easy copy pasting
-map <F2> :w !pbcopy<CR>
-map <F3> :r !pbpaste<CR>
+map <F2> :w !pbcopy<CR><CR>
+map <F3> :r !pbpaste<CR><CR>
 
 let g:vim_markdown_folding_disabled=1
 
