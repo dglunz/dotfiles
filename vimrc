@@ -5,7 +5,7 @@ filetype plugin indent on
 syntax on
 set ttyfast
 
-colorscheme Tomorrow-Night
+colorscheme journeyman
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
@@ -14,12 +14,17 @@ set colorcolumn=80
 
 " The Leader
 let mapleader = "\<Space>"
-nnoremap <Leader>1 :colo Tomorrow-Night-Eighties<CR>
-nnoremap <Leader>2 :colo Tomorrow<CR>
+nnoremap <leader>1 :colo journeyman<CR>
+nnoremap <leader>2 :colo Tomorrow-Night<CR>
+nnoremap <leader>3 :colo Tomorrow<CR>
+
+" Easy copy pasting
+nnoremap <leader>9 :w !pbcopy<CR><CR>
+nnoremap <leader>0 :r !pbpaste<CR><CR>
 
 nnoremap <leader>y :TagbarToggle<CR>
 nnoremap <leader>Q :q!<CR>
-nnoremap <Leader>w :w<cr>
+nnoremap <leader>w :w<cr>
 nnoremap <leader>q :wq<CR>
 nnoremap <leader>r :NERDTreeFind<cr>
 nnoremap <leader>o :CtrlP<CR>
@@ -27,23 +32,23 @@ nnoremap <leader>f /
 nnoremap <leader>h :set hlsearch!<CR>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
+nnoremap <leader>a :Ack!<Space>
 
 " Buffer shortcuts
 nnoremap <leader>n :bn<CR>
 nnoremap <leader>p :bp<CR>
 nnoremap <leader>d :bd<CR>
-nnoremap <Leader>ad :BufOnly<CR>
 
 " Git shortcuts
 nnoremap <leader>b :Gblame<CR>
 nnoremap <leader>gh :Gbrowse<CR>
-nnoremap <Leader>t :GoTest<CR>
+nnoremap <leader>t :GoTest<CR>
 
 " .js
-" nnoremap <Leader>t :w<CR>:call RunAllSpecs()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :CoffeeLint!<CR>
-nnoremap <leader>c :Log<CR>
+nnoremap <leader>c :w<CR>:call RunAllSpecs()<CR>
+nnoremap <leader>s :call RunNearestSpec()<CR>
+nnoremap <leader>l :CoffeeLint!<CR>
+" nnoremap <leader>c :Log<CR>
 nnoremap <leader>R :RainbowParenthesesToggle<Enter>
 :command Log :insert console.log<ESC>
 
@@ -53,7 +58,6 @@ nnoremap <leader>l :GoDoc<CR>
 let g:go_jump_to_error = 0
 
 " .rb
-nnoremap <Leader>a :!rubocop -a %<CR>
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
@@ -68,6 +72,7 @@ imap kj <Esc>
 imap jk <Esc>
 
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='tomorrow'
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeMapOpenInTab  = '<c-t>'
@@ -76,10 +81,6 @@ let NERDTreeMapOpenVSplit = '<c-v>'
 map <C-t> :NERDTreeToggle<CR>
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
-
-" Easy copy pasting
-map <F2> :w !pbcopy<CR><CR>
-map <F3> :r !pbpaste<CR><CR>
 
 let g:vim_markdown_folding_disabled=1
 
