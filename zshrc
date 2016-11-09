@@ -39,20 +39,13 @@ alias gpo="git push origin"
 alias gpl="git pull origin master"
 alias dply="git push heroku master && heroku run rake db:migrate && heroku restart"
 
-# Open according to suffix
-alias -s rb=vim
-alias -s go=vim
-alias -s html=open
-
 # Random Aliases
 alias mo="cd ~/Documents/codes/momakase"
 alias fh="cd ~/Documents/codes/realty"
 alias up="cd ~/Documents/codes/upknown"
 alias notes="vim ~/.notes.txt"
-alias todo="vim ~/Desktop/todo.txt"
 alias dot="cd ~/dotfiles"
 alias fs="foreman start"
-alias gv="gvim"
 alias v="vim"
 alias fucking="sudo"
 
