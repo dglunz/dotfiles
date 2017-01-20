@@ -10,8 +10,15 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 set colorcolumn=80
-" Only syntax highlight 120 columns (improve long line performance)
+" Only syntax highlight 200 columns (improve long line performance)
 set synmaxcol=200
+
+" Different cursor look on insert
+:autocmd InsertEnter,InsertLeave * set cul!
+if $TERM_PROGRAM =~ "iTerm"
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+endif
 
 " The Leader
 let mapleader = "\<Space>"
@@ -33,7 +40,7 @@ nnoremap <leader>h :set hlsearch!<CR>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 nnoremap <leader>a :Ack!<Space>
-nnoremap <leader>g :sp ~/Desktop/todo.txt<CR>
+nnoremap <leader>g :sp ~/.todo.txt<CR>
 
 " Buffer shortcuts
 nnoremap <leader>n :bn<CR>
@@ -53,8 +60,6 @@ nnoremap <leader>l :GoDoc<CR>
 nnoremap <leader>t :GoTest<CR>
 let g:go_jump_to_error = 0
 
-" .rb
-
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
@@ -67,9 +72,19 @@ set hidden
 imap kj <Esc>
 imap jk <Esc>
 
+" Netrw > NERDTree
+"let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 2
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 15
+"map <C-t> :Vex<CR>
+
+" Tags
+set tags=./tags,tags;
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='tomorrow'
-
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeMapOpenInTab  = '<c-t>'
 let NERDTreeMapOpenSplit  = '<c-x>'

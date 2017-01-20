@@ -41,7 +41,7 @@ if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
     hi MatchParen     ctermbg=233  ctermfg=229  guibg=#1c1c1c guifg=#ffffaf cterm=NONE           gui=NONE
     hi signColumn     ctermbg=233  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c cterm=NONE           gui=NONE
   else
-    hi Normal         ctermbg=235  ctermfg=250  guibg=#262626 guifg=#bcbcbc cterm=NONE           gui=NONE
+    hi Normal         ctermbg=235  ctermfg=250  guibg=#1c1c1c guifg=#bcbcbc cterm=NONE           gui=NONE
     hi LineNr         ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c cterm=NONE           gui=NONE
     hi FoldColumn     ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c cterm=NONE           gui=NONE
     hi Folded         ctermbg=234  ctermfg=242  guibg=#1c1c1c guifg=#6c6c6c cterm=NONE           gui=NONE
@@ -123,7 +123,7 @@ if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
     hi SpellRare        ctermbg=NONE ctermfg=208  guibg=NONE    guifg=#ff8700 cterm=undercurl      gui=undercurl guisp=NONE
   endif 
 
-  hi ColorColumn      ctermbg=236 ctermfg=NONE guibg=#af5f5f guifg=NONE    cterm=NONE           gui=NONE
+  hi ColorColumn      ctermbg=236 ctermfg=NONE guibg=#303030 guifg=NONE    cterm=NONE           gui=NONE
 elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
   set t_Co=16
 
