@@ -47,8 +47,9 @@ alias notes="vim ~/.notes.txt"
 alias todo="vim ~/.todo.txt"
 alias dot="cd ~/dotfiles"
 alias fs="foreman start"
-alias v="vim"
+alias v="gvim"
 alias fucking="sudo"
+alias curlp="curl -X POST -H \"Content-Type: application/json\" -d \"@./tmp/$1\" http://localhost:3000/$2"
 
 # Current workflow
 alias pas="cd ~/Documents/codes/pana/sabre-soap"

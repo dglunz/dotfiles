@@ -4,6 +4,9 @@
 # This script creates symlinks from the home directory to dotfiles in ~/dotfiles
 ############################
 
+########## Etc
+# Font: Inconsolata
+
 ########## Variables
 
 dir=~/dotfiles # dotfiles directory

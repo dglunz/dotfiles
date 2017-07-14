@@ -123,7 +123,7 @@ if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
     hi SpellRare        ctermbg=NONE ctermfg=208  guibg=NONE    guifg=#ff8700 cterm=undercurl      gui=undercurl guisp=NONE
   endif 
 
-  hi ColorColumn      ctermbg=236 ctermfg=NONE guibg=#303030 guifg=NONE    cterm=NONE           gui=NONE
+  hi ColorColumn      ctermbg=236 ctermfg=NONE guibg=#444444 guifg=NONE    cterm=NONE           gui=NONE
 elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
   set t_Co=16
 

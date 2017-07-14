@@ -5,6 +5,7 @@ syntax on
 set ttyfast
 
 colorscheme journeyman
+set guifont=Inconsolata\ Regular:h14
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
@@ -37,6 +38,7 @@ nnoremap <leader>r :NERDTreeFind<cr>
 nnoremap <leader>o :CtrlP<CR>
 nnoremap <leader>f /
 nnoremap <leader>h :set hlsearch!<CR>
+
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 nnoremap <leader>a :Ack!<Space>
@@ -49,15 +51,16 @@ nnoremap <leader>d :bd<CR>
 
 " Git shortcuts
 nnoremap <leader>b :Gblame<CR>
+vnoremap <leader>v :Gbrowse<CR>
 
 " .js
 nnoremap <leader>c :w<CR>:call RunAllSpecs()<CR>
 nnoremap <leader>s :call RunNearestSpec()<CR>
 
 " .go
-nnoremap <leader>v :GoDef<CR>
-nnoremap <leader>l :GoDoc<CR>
-nnoremap <leader>t :GoTest<CR>
+"nnoremap <leader>v :GoDef<CR>
+"nnoremap <leader>l :GoDoc<CR>
+"nnoremap <leader>t :GoTest<CR>
 let g:go_jump_to_error = 0
 
 " Display extra whitespace
