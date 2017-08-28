@@ -4,7 +4,7 @@ set shell=zsh\ --login
 syntax on
 set ttyfast
 
-colorscheme journeyman
+colorscheme monokai
 set guifont=Inconsolata\ Regular:h14
 set guioptions-=r
 set guioptions-=R
@@ -26,6 +26,7 @@ let mapleader = "\<Space>"
 nnoremap <leader>1 :colo journeyman<CR>
 nnoremap <leader>2 :colo Tomorrow-Night<CR>
 nnoremap <leader>3 :colo Tomorrow<CR>
+nnoremap <leader>4 :colo monokai<CR>
 
 " Easy copy pasting
 set clipboard=unnamed
