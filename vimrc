@@ -1,18 +1,24 @@
 execute pathogen#infect()
 set rtp+=/usr/local/go/misc/vim
 set shell=zsh\ --login
-syntax on
 set ttyfast
+set nolazyredraw
+set nolist
+set nocursorline
+set number
+set hidden
 
-colorscheme monokai
-set guifont=Inconsolata\ Regular:h14
+colorscheme gruvbox
+set background=dark
+
+set guifont=Menlo\ Regular:h18
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 set colorcolumn=80
-" Only syntax highlight 200 columns (improve long line performance)
-set synmaxcol=200
+" Only syntax highlight x columns (improve long line performance)
+set synmaxcol=300
 
 " Different cursor look on insert
 :autocmd InsertEnter,InsertLeave * set cul!
@@ -68,9 +74,9 @@ let g:go_jump_to_error = 0
 set list listchars=tab:»·,trail:·,nbsp:·
 
 " Use relative number in normal mode and absolute number in insert mode
-set relativenumber
-set number
-set hidden
+"set relativenumber
+"set number
+"set hidden
 
 " Because my pinky can't handle reaching esc
 imap kj <Esc>
@@ -87,8 +93,23 @@ imap jk <Esc>
 " Tags
 set tags=./tags,tags;
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='tomorrow'
+" Status line
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline_theme='tomorrow'
+set statusline=
+set statusline+=%#PrimaryBlock#
+set statusline+=\ %{mode()} 
+set statusline+=%#TeritaryBlock#
+set statusline+=\ %f
+set statusline+=%M 
+set statusline+=%#TeritaryBlock#
+set statusline+=%=
+set statusline+=%#SecondaryBlock#
+set statusline+=\ %Y 
+set statusline+=%#PrimaryBlock#
+set statusline+=\ %P 
+"set statusline=%<\ %f\ %m%r%y%w%=%l\/%-6L\ %3c\
+
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeMapOpenInTab  = '<c-t>'
 let NERDTreeMapOpenSplit  = '<c-x>'
@@ -131,7 +152,7 @@ set nobackup                 " no backup files
 set nowritebackup            " only in case you don't want a backup file while editing
 set noswapfile               " no swap files
 set scrolloff=4              " adds top/bottom buffer between cursor and window
-set cursorline               " colours the line the cursor is on
+"set cursorline               " colours the line the cursor is on
 
 " easier navigation between split windows
 nnoremap <c-j> <c-w>j
