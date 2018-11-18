@@ -1,0 +1,34 @@
+# Git Aliases
+alias gs="git status"
+alias gd="git diff --patience --ignore-space-change"
+alias gcb="git checkout -b"
+alias gb="git branch"
+alias ga="git add"
+alias gh="git hist"
+alias be="bundle exec"
+alias gm="git checkout master"
+alias gcm="git commit -m"
+alias gbd="git branch | grep -v 'master' | xargs git branch -D"
+alias gpo="git push origin"
+alias gpl="git pull origin master"
+alias dply="git push heroku master && heroku run rake db:migrate && heroku restart"
+
+# Random Aliases
+alias mo="cd ~/Documents/codes/momakase"
+alias fh="cd ~/Documents/codes/realty"
+alias up="cd ~/Documents/codes/upknown"
+alias notes="vim ~/.notes.txt"
+alias todo="vim ~/.todo.txt"
+alias dot="cd ~/dotfiles"
+alias fs="foreman start"
+alias v="gvim"
+alias fucking="sudo"
+alias noise="~/zero-noise/noise.sh"
+
+# Current workflow outside of tmuxinator
+alias pas="cd ~/Documents/codes/pana/sabre-soap"
+alias pag="cd ~/Documents/codes/pana/pana-agent"
+alias paw="cd ~/Documents/codes/pana/pana-web"
+alias pap="cd ~/Documents/codes/pana/pana-api"
+alias pad="cd ~/Documents/codes/pana/pana-docs"
+
