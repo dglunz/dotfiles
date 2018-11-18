@@ -1,5 +1,3 @@
-PROMPT='$ '
-
 # Colorscheme
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 
@@ -12,21 +10,36 @@ DISABLE_AUTO_TITLE="true"
 # Enable command auto-correction.
 ENABLE_CORRECTION="true"
 
+# https://github.com/zplug/zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+zplug "lib/theme-and-appearance", from:oh-my-zsh
+zplug "lib/clipboard", from:oh-my-zsh
+zplug "lib/completion", from:oh-my-zsh
+zplug "lib/key-bindings", from:oh-my-zsh
+zplug "lib/directories", from:oh-my-zsh
+zplug "lib/history", from:oh-my-zsh
+zplug "plugins/vi-mode", from:oh-my-zsh
+zplug 'dracula/zsh', as:theme
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load
+
 # Git info
 # https://github.com/olivierverdier/zsh-git-prompt
 ZSH_GIT_PROMPT="$HOME/zsh-git-prompt/zshrc.sh"
-CUSTOM_GIT="$HOME/dotfiles/scripts/custom_git.zsh"
-
 [ -s $ZSH_GIT_PROMPT ] && source $ZSH_GIT_PROMPT
-[ -s $CUSTOM_GIT ] && source $CUSTOM_GIT
 
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✓%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_PREFIX=" "
-ZSH_THEME_GIT_PROMPT_SUFFIX=" "
-ZSH_THEME_GIT_PROMPT_SEPARATOR=" "
-ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[red]%}%{●%G%}"
-ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[blue]%}%{✚%G%}"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[blue]%}◒"
+PROMPT='$ '
+RPROMPT='%(4~|%2~|%~)$(git_super_status)'
 
 # https://github.com/rbenv/rbenv
 eval "$(rbenv init -)"
@@ -40,6 +53,14 @@ export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 # Go config
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
+
+# Larger history (allow 32³ entries; default is 500)
+export HISTSIZE=32768
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignoredups
+
+# Make some commands not show up in history
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
 # Setup zsh-autosuggestions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh

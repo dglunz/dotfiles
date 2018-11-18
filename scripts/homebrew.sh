@@ -12,6 +12,7 @@ brew update
 
 # Install zsh
 brew install zsh
+brew install zplug
 brew install zsh-autosuggestions
 
 # Neovim
