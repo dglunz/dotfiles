@@ -1,16 +1,29 @@
-# ~/.tmuxinator/github-api.yml
+# ~/.tmuxinator/pana.yml
 
-name: github-api
-root: ~/Sites/github-user-search
-startup_window: nvim
+name: pana
+root: ~/Documents/codes/pana
+startup_window: api
 
 windows:
-  - nvim:
-    - nvim
-  - git:
-      layout: even-horizontal
+  - api:
+      root: ~/Documents/codes/pana/pana-api
+      layout: main-horizontal
       panes:
-        -
-        - ./node_modules/.bin/jest --watch
-  - server:
-    - npm start
+        - nvim
+        - gulp
+  - web:
+      layout: main-horizontal
+      root: ~/Documents/codes/pana/pana-web
+      panes:
+        - nvim
+        - gulp
+  - agent:
+      layout: main-horizontal
+      root: ~/Documents/codes/pana/pana-agent
+      panes:
+        - nvim
+        - gulp
+  - sabre:
+      root: ~/Documents/codes/pana/sabre-soap
+      panes:
+        - nvim
