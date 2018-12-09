@@ -14,7 +14,7 @@ alias gpl="git pull origin master"
 alias dply="git push heroku master && heroku run rake db:migrate && heroku restart"
 
 # Random Aliases
-alias m="tmuxinator"
+alias mux="tmuxinator"
 alias mo="cd ~/Documents/codes/momakase"
 alias fh="cd ~/Documents/codes/realty"
 alias up="cd ~/Documents/codes/upknown"
