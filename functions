@@ -3,3 +3,4 @@ curlp() {
 }
 curlx() {
   curl -X POST -H "Content-Type: text/xml; charset=utf-8" -d "@./tmp/$1.xml" "http://localhost:3000/$2"
+}

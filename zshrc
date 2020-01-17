@@ -46,6 +46,7 @@ eval "$(rbenv init -)"
 
 # User configuration
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/Users/dannyglunz/Library/Python/3.7/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/lib/node_modules/:$PATH"
 export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"

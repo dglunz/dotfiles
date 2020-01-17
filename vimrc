@@ -16,11 +16,11 @@ set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
-set colorcolumn=80
+set colorcolumn=100
 " Only syntax highlight x columns (improve long line performance)
 set synmaxcol=300
 
-" Different cursor look on insert
+" Skinny cursor look on insert
 :autocmd InsertEnter,InsertLeave * set cul!
 if $TERM_PROGRAM =~ "iTerm"
   let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
@@ -60,9 +60,12 @@ nnoremap <leader>d :bd<CR>
 nnoremap <leader>b :Gblame<CR>
 vnoremap <leader>v :Gbrowse<CR>
 
-" .js
-nnoremap <leader>c :w<CR>:call RunAllSpecs()<CR>
-nnoremap <leader>s :call RunNearestSpec()<CR>
+" Testing
+nnoremap <leader>t :TestNearest<CR>
+"nnoremap <leader>f :TestFile<CR>
+nnoremap <leader>s :TestSuite<CR>
+nnoremap <leader>l :TestLast<CR>
+nnoremap <leader>v :TestVisit<CR>
 
 " .go
 "nnoremap <leader>v :GoDef<CR>
@@ -73,29 +76,14 @@ let g:go_jump_to_error = 0
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
-" Use relative number in normal mode and absolute number in insert mode
-"set relativenumber
-"set number
-"set hidden
-
 " Because my pinky can't handle reaching esc
 imap kj <Esc>
 imap jk <Esc>
-
-" Netrw > NERDTree
-"let g:netrw_banner = 0
-"let g:netrw_liststyle = 3
-"let g:netrw_browse_split = 2
-"let g:netrw_altv = 1
-"let g:netrw_winsize = 15
-"map <C-t> :Vex<CR>
 
 " Tags
 set tags=./tags,tags;
 
 " Status line
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline_theme='tomorrow'
 set statusline=
 set statusline+=%#PrimaryBlock#
 set statusline+=\ %{mode()} 
@@ -108,51 +96,58 @@ set statusline+=%#SecondaryBlock#
 set statusline+=\ %Y 
 set statusline+=%#PrimaryBlock#
 set statusline+=\ %P 
-"set statusline=%<\ %f\ %m%r%y%w%=%l\/%-6L\ %3c\
 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" Try replacing NERD with builtin Netrw
+"let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 2
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 15
+"map <C-t> :Vex<CR>
+
+" NERDTree
+autocmd bufenter * if (winnr("$") == 0 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeMapOpenInTab  = '<c-t>'
 let NERDTreeMapOpenSplit  = '<c-x>'
 let NERDTreeMapOpenVSplit = '<c-v>'
 map <C-t> :NERDTreeToggle<CR>
+
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
-
-let g:vim_markdown_folding_disabled=1
 
 " Completion suggestions
 inoremap <C-@> <C-n>
 
 " FuzzyFile search basic setup
+let g:ctrlp_show_hidden = 1 " Search hidden dotfiles
 let g:ctrlp_map = ''
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/bower_modules/*,*/build/*
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
-"" ==========  These come from Mislav (http://mislav.uniqpath.com/2011/12/vim-revisited/)  ==========
-set nocompatible                " choose no compatibility with legacy vi
+set nocompatible " choose no compatibility with legacy vi
 syntax enable
 set encoding=utf-8
-set showcmd                     " display incomplete commands
-filetype plugin indent on       " load file type plugins + indentation
+filetype plugin indent on" load file type plugins + indentation
 
 "" Whitespace
-set nowrap                      " don't wrap lines
-set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
-set expandtab                   " use spaces, not tabs (optional)
-set backspace=indent,eol,start  " backspace through everything in insert mode
+set tabstop=2 shiftwidth=2 " a tab is two spaces (or set this to 4)
+set expandtab " use spaces, not tabs
+set backspace=indent,eol,start " backspace through everything in insert mode
+set scrolloff=4              " adds top/bottom buffer between cursor and window
+ 
+" Try without
+set showcmd " display incomplete commands
+set nowrap " don't wrap lines
 
 "" Searching
-set hlsearch                    " highlight matches
-set incsearch                   " incremental searching
+set hlsearch " highlight matches
+set incsearch " incremental searching
 
-"" ==========  These come from JoshCheek (https://github.com/joshcheek/dotfiles)  ==========
 set nobackup                 " no backup files
 set nowritebackup            " only in case you don't want a backup file while editing
 set noswapfile               " no swap files
-set scrolloff=4              " adds top/bottom buffer between cursor and window
-"set cursorline               " colours the line the cursor is on
 
 " easier navigation between split windows
 nnoremap <c-j> <c-w>j

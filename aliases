@@ -1,13 +1,15 @@
 # Git Aliases
 alias gs="git status"
 alias gd="git diff --patience --ignore-space-change"
+alias gco="git checkout"
+alias gcm="git checkout master"
 alias gcb="git checkout -b"
 alias gb="git branch"
 alias ga="git add"
 alias gh="git hist"
 alias be="bundle exec"
 alias gm="git checkout master"
-alias gcm="git commit -m"
+alias gc="git commit"
 alias gbd="git branch | grep -v 'master' | xargs git branch -D"
 alias gpo="git push origin"
 alias gpl="git pull origin master"
@@ -25,6 +27,12 @@ alias fs="foreman start"
 alias v="gvim"
 alias fucking="sudo"
 alias noise="~/zero-noise/noise.sh"
+
+# Curl Aliases
+curlp() {
+  curl -X POST -H "Content-Type: application/json" -d "@./tmp/$1.json" "http://localhost:3000/$2"
+  curl -X POST -H "Authorization: Bearer $PANA_ADMIN" -H "Content-Type: application/json" -d "@./tmp/$1.json" "http://localhost:3000/$2"
+}
 
 # Current workflow outside of tmuxinator
 alias pas="cd ~/Documents/codes/pana/sabre-soap"

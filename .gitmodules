@@ -94,3 +94,12 @@
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "vim/bundle/semantic-highlight.vim"]
+	path = vim/bundle/semantic-highlight.vim
+	url = https://github.com/jaxbot/semantic-highlight.vim.git
+[submodule "vim/bundle/vim-prettier"]
+	path = vim/bundle/vim-prettier
+	url = git@github.com:prettier/vim-prettier.git
+[submodule "vim/bundle/vim-test"]
+	path = vim/bundle/vim-test
+	url = git@github.com:janko/vim-test.git

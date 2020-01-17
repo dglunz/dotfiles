@@ -9,20 +9,20 @@ windows:
       root: ~/Documents/codes/pana/pana-api
       layout: main-horizontal
       panes:
-        - nvim
         - gulp
+        - nvim
   - web:
       layout: main-horizontal
       root: ~/Documents/codes/pana/pana-web
       panes:
-        - nvim
         - gulp
+        - nvim
   - agent:
       layout: main-horizontal
       root: ~/Documents/codes/pana/pana-agent
       panes:
-        - nvim
         - gulp
+        - nvim
   - sabre:
       root: ~/Documents/codes/pana/sabre-soap
       panes:
