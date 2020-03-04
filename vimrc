@@ -4,13 +4,15 @@ set shell=zsh\ --login
 set nolist
 set number
 set hidden
+set nowrap
 
-colorscheme gruvbox
+" Colors
+let g:neodark#use_256color = 1
+syntax on
+colorscheme neodark
 set background=dark
-
 set colorcolumn=100
-" Only syntax highlight x columns (improve long line performance)
-set synmaxcol=300
+set synmaxcol=300 " Only syntax highlight x columns (improve long line performance)
 
 " Skinny cursor look on insert
 :autocmd InsertEnter,InsertLeave * set cul!
@@ -48,9 +50,17 @@ nnoremap <leader>b :Gblame<CR>
 vnoremap <leader>v :Gbrowse origin/master:%<CR>
 
 " Testing
-nnoremap <leader>t :TestNearest<CR>
-nnoremap <leader>s :TestSuite<CR>
-nnoremap <leader>v :TestVisit<CR>
+nnoremap <leader>tn :TestNearest<CR>
+nnoremap <leader>tt :TestNearest<CR>
+nnoremap <leader>tf :TestFile<CR>
+nnoremap <leader>ts :TestSuite<CR>
+nnoremap <leader>tv :TestVisit<CR>
+let test#javascript#jest#options = '--config=./test/jest.config.js'
+nmap <Leader>tc :CodeClimateAnalyzeCurrentFile<CR>
+
+" Terminal Mode
+tnoremap <leader>d <C-\><C-n>:q<CR>
+tnoremap <Esc> <C-\><C-n>
 
 " .go
 "nnoremap <leader>v :GoDef<CR>
@@ -103,7 +113,10 @@ let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/bower_modules/*,*/build/*
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
-syntax enable
+" Prettier on save
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
+
 set encoding=utf-8
 filetype plugin indent on " load file type plugins + indentation
 
