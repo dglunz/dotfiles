@@ -55,11 +55,14 @@ nnoremap <leader>tt :TestNearest<CR>
 nnoremap <leader>tf :TestFile<CR>
 nnoremap <leader>ts :TestSuite<CR>
 nnoremap <leader>tv :TestVisit<CR>
+" let test#strategy = "neovim"
 let test#javascript#jest#options = '--config=./test/jest.config.js'
 nmap <Leader>tc :CodeClimateAnalyzeCurrentFile<CR>
 
 " Terminal Mode
 tnoremap <leader>d <C-\><C-n>:q<CR>
+tnoremap jk <C-\><C-n>
+tnoremap kj <C-\><C-n>
 tnoremap <Esc> <C-\><C-n>
 
 " .go
@@ -98,6 +101,7 @@ let NERDTreeMapOpenInTab  = '<c-t>'
 let NERDTreeMapOpenSplit  = '<c-x>'
 let NERDTreeMapOpenVSplit = '<c-v>'
 map <C-t> :NERDTreeToggle<CR>
+let g:NERDTreeWinPos = "right"
 
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
@@ -114,8 +118,9 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/bower_modules/*,*/bu
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " Prettier on save
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
+"let g:prettier#autoformat = 0
+"let g:prettier#autoformat_config_present = 1
+"autocmd BufWritePre *.ts,*.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
 
 set encoding=utf-8
 filetype plugin indent on " load file type plugins + indentation
@@ -144,3 +149,65 @@ nnoremap <c-l> <c-w>l
 cmap %/ <C-R>=expand("%:p:h")."/"<CR>
 cmap %% <C-R>=expand("%")<CR>
 
+" coc setup
+let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-prettier']
+
+" Shorten updatetime (default is 4000 ms)
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+" Use tab for trigger completion with characters ahead and navigate.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" ShowDocIfNoDiagnostic setup
+function! ShowDocIfNoDiagnostic(timer_id)
+  if (coc#util#has_float() == 0)
+    silent call CocActionAsync('doHover')
+  endif
+endfunction
+
+function! s:show_hover_doc()
+  call timer_start(500, 'ShowDocIfNoDiagnostic')
+endfunction
+
+autocmd CursorHoldI * :call <SID>show_hover_doc()
+autocmd CursorHold * :call <SID>show_hover_doc()
+" ShowDocIfNoDiagnostic
+
+" coc navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)

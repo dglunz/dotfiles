@@ -17,22 +17,13 @@ alias dply="git push heroku master && heroku run rake db:migrate && heroku resta
 
 # Random Aliases
 alias mux="tmuxinator"
-alias mo="cd ~/Documents/codes/momakase"
-alias fh="cd ~/Documents/codes/realty"
-alias up="cd ~/Documents/codes/upknown"
 alias notes="vim ~/.notes.txt"
 alias todo="vim ~/.todo.txt"
 alias dot="cd ~/dotfiles"
 alias fs="foreman start"
-alias v="gvim"
+alias v="nvim"
 alias fucking="sudo"
 alias noise="~/zero-noise/noise.sh"
-
-# Curl Aliases
-curlp() {
-  curl -X POST -H "Content-Type: application/json" -d "@./tmp/$1.json" "http://localhost:3000/$2"
-  curl -X POST -H "Authorization: Bearer $PANA_ADMIN" -H "Content-Type: application/json" -d "@./tmp/$1.json" "http://localhost:3000/$2"
-}
 
 # Current workflow outside of tmuxinator
 alias pas="cd ~/Documents/codes/pana/sabre-soap"
