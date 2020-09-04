@@ -43,7 +43,7 @@ nnoremap <leader>g :sp ~/.todo.txt<CR>
 " Buffer shortcuts
 nnoremap <leader>n :bn<CR>
 nnoremap <leader>p :bp<CR>
-nnoremap <leader>d :bd<CR>
+nnoremap <leader>d :bd!<CR>
 
 " Git shortcuts
 nnoremap <leader>b :Gblame<CR>
@@ -55,7 +55,11 @@ nnoremap <leader>tt :TestNearest<CR>
 nnoremap <leader>tf :TestFile<CR>
 nnoremap <leader>ts :TestSuite<CR>
 nnoremap <leader>tv :TestVisit<CR>
-" let test#strategy = "neovim"
+let test#strategy = {
+  \ 'nearest': 'neovim',
+  \ 'file':    'basic',
+  \ 'suite':   'basic',
+  \ }
 let test#javascript#jest#options = '--config=./test/jest.config.js'
 nmap <Leader>tc :CodeClimateAnalyzeCurrentFile<CR>
 
