@@ -18,5 +18,6 @@ brew cask install font-inconsolata
 
 # Dev tools
 brew cask install postico
+brew cask install heroku
 
 brew cleanup

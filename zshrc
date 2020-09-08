@@ -1,5 +1,5 @@
 # Colorscheme
-source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+# source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 
 # Default editor
 export EDITOR="nvim"
@@ -21,7 +21,6 @@ zplug "lib/key-bindings", from:oh-my-zsh
 zplug "lib/directories", from:oh-my-zsh
 zplug "lib/history", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
-zplug 'dracula/zsh', as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
