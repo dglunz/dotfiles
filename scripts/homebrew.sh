@@ -16,13 +16,12 @@ brew install zplug
 brew install zsh-autosuggestions
 
 # Neovim
-brew install python3
-brew install neovim/neovim/neovim
 pip3 install neovim
 
 # Tmux
 brew install reattach-to-user-namespace
 brew install tmux
+brew install tmuxinator
 brew install urlview
 
 # Ruby
@@ -32,8 +31,12 @@ brew install rbenv
 brew install ack
 brew install go
 brew install python
+
+# Redis
 brew install redis
 brew services start redis
+
+# Postgres
 brew install postgresql
 brew services start postgresql
 

@@ -6,24 +6,25 @@ startup_window: api
 
 windows:
   - api:
-      root: ~/Documents/codes/pana/pana-api
+      root: ~/Documents/code/pana-api
       layout: main-horizontal
       panes:
         - npm run dev
         - nvim
   - web:
       layout: main-horizontal
-      root: ~/Documents/codes/pana/pana-web
+      root: ~/Documents/code/pana-web
       panes:
         - gulp
         -
   - agent:
       layout: main-horizontal
-      root: ~/Documents/codes/pana/pana-agent
+      root: ~/Documents/code/pana-agent
       panes:
         - gulp
         -
   - sabre:
-      root: ~/Documents/codes/pana/sabre-soap
+      root: ~/Documents/code/sabre-soap
       panes:
+        -
         -
