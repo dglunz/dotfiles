@@ -1,5 +1,5 @@
 # Create directories
-mkdir -p "$HOME/.config/nvim/"
+ln -s "$HOME/.vim" "$HOME/.config/nvim"
 ln -sfv "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
 
 # Allow CTRL-H mapping to work in neovim

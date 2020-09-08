@@ -1,6 +1,3 @@
-brew tap caskroom/cask
-brew tap caskroom/versions
-
 # Browser
 brew cask install google-chrome
 
@@ -16,7 +13,10 @@ brew cask install spectacle
 
 # Fonts
 # https://github.com/caskroom/homebrew-fonts
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 brew cask install font-inconsolata
+
+# Dev tools
+brew cask install postico
 
 brew cleanup
