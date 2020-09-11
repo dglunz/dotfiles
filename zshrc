@@ -83,6 +83,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
 # TMUX
-export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins/"
+export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

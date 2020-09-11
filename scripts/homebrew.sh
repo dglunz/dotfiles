@@ -40,4 +40,8 @@ brew services start redis
 brew install postgresql
 brew services start postgresql
 
+# Heroku
+brew tap heroku/brew
+brew install heroku
+
 brew cleanup

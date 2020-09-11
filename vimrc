@@ -193,25 +193,28 @@ function! s:show_documentation()
   endif
 endfunction
 
-" ShowDocIfNoDiagnostic setup
-function! ShowDocIfNoDiagnostic(timer_id)
-  if (coc#util#has_float() == 0)
-    silent call CocActionAsync('doHover')
-  endif
-endfunction
+" ShowDocIfNoDiagnostic setup (shows hover documentation when no errors exist)
+" function! ShowDocIfNoDiagnostic(timer_id)
+"   if (coc#util#has_float() == 0)
+"     silent call CocActionAsync('doHover')
+"   endif
+" endfunction
+" 
+" function! s:show_hover_doc()
+"   call timer_start(500, 'ShowDocIfNoDiagnostic')
+" endfunction
 
-function! s:show_hover_doc()
-  call timer_start(500, 'ShowDocIfNoDiagnostic')
-endfunction
-
-autocmd CursorHoldI * :call <SID>show_hover_doc()
-autocmd CursorHold * :call <SID>show_hover_doc()
+" autocmd CursorHoldI * :call <SID>show_hover_doc()
+" autocmd CursorHold * :call <SID>show_hover_doc()
 " ShowDocIfNoDiagnostic
 
-" coc navigation
+" coc actions
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
+
+nmap <leader>do <Plug>(coc-codeaction)
+nmap <leader>rn <Plug>(coc-rename)
 
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
