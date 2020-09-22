@@ -23,8 +23,9 @@ windows:
       panes:
         - gulp
         -
-  - sabre:
-      root: ~/Documents/code/sabre-soap
+  - misc:
+      root: ~/Documents/code
       panes:
-        -
-        -
+        - cd sabre-soap
+        - cd pana-lumber
+        - cd pana-singer

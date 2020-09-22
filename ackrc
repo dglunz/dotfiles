@@ -1,0 +1,7 @@
+# Always color, even if piping to another program
+--color
+
+# Ignore directories that are never searched for
+--ignore-dir=is:.notes
+--ignore-directory=is:build
+
