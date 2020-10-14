@@ -218,3 +218,6 @@ nmap <leader>cr <Plug>(coc-rename)
 
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Open bash command results in a new split
+command Exec set splitbelow | new | set filetype=sh | read !sh #
