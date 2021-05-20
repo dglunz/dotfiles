@@ -44,4 +44,7 @@ brew services start postgresql
 brew tap heroku/brew
 brew install heroku
 
+# Misc
+brew install cmus
+
 brew cleanup

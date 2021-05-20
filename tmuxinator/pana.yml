@@ -11,21 +11,27 @@ windows:
       panes:
         - npm run dev
         - nvim
+        - gs
   - web:
       layout: main-horizontal
       root: ~/Documents/code/pana-web
       panes:
-        - gulp
+        - nvm use 10 && npm run dev
         -
   - agent:
       layout: main-horizontal
       root: ~/Documents/code/pana-agent
       panes:
-        - gulp
+        - nvm use 10 && npm run dev
         -
+  - sabre:
+      root: ~/Documents/code/pana-sabre
+      panes:
+        - npm run dev
+        - 
   - misc:
       root: ~/Documents/code
       panes:
-        - cd sabre-soap
+        - cd analytics
         - cd pana-lumber
         - cd pana-singer

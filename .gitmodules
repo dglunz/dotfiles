@@ -52,3 +52,6 @@
 [submodule "vim/bundle/coc.nvim"]
 	path = vim/bundle/coc.nvim
 	url = git@github.com:neoclide/coc.nvim.git
+[submodule "vim/bundle/markdown-preview.nvim"]
+	path = vim/bundle/markdown-preview.nvim
+	url = https://github.com/iamcco/markdown-preview.nvim.git
