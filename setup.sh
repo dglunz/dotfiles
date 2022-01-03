@@ -1,6 +1,5 @@
 source ./scripts/symlinks.sh
-source ./scripts/homebrew.sh
-source ./scripts/cask.sh
+source ./scripts/brew.sh
 source ./scripts/zsh.sh
 source ./scripts/vim.sh
 source ./scripts/node.sh

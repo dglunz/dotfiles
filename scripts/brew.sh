@@ -3,7 +3,7 @@ echo "Installing homebrew ..."
 
 which -s brew
 if [[ $? != 0 ]] ; then
-  yes | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
   echo "Homebrew already installed ..."
 fi
@@ -16,7 +16,7 @@ brew install zplug
 brew install zsh-autosuggestions
 
 # Neovim
-pip3 install neovim
+brew install neovim
 
 # Tmux
 brew install reattach-to-user-namespace
@@ -27,7 +27,7 @@ brew install urlview
 # Ruby
 brew install rbenv
 
-# Install other useful binaries.
+# Install other useful binaries
 brew install ack
 brew install go
 brew install python
@@ -44,7 +44,27 @@ brew services start postgresql
 brew tap heroku/brew
 brew install heroku
 
-# Misc
+# Browser
+brew install --cask google-chrome
+brew install --cask firefox
+
+# Chat
+brew install --cask zoom
+brew install --cask slack
+
+# Media
+brew install --cask spotify
 brew install cmus
+
+# Mac OS Enhancements
+brew install --cask spectacle
+
+# Fonts
+brew tap homebrew/cask-fonts
+brew install --cask font-inconsolata
+
+# Dev tools
+brew install --cask postico
+brew install --cask ngrok
 
 brew cleanup

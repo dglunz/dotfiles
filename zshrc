@@ -11,7 +11,7 @@ DISABLE_AUTO_TITLE="true"
 ENABLE_CORRECTION="true"
 
 # https://github.com/zplug/zplug
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "lib/theme-and-appearance", from:oh-my-zsh
@@ -40,9 +40,6 @@ ZSH_GIT_PROMPT="$HOME/zsh-git-prompt/zshrc.sh"
 PROMPT='$ '
 RPROMPT='%(4~|%2~|%~)$(git_super_status)'
 
-# https://github.com/rbenv/rbenv
-eval "$(rbenv init -)"
-
 # User configuration
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/Users/dannyglunz/Library/Python/3.7/bin:$PATH"
@@ -63,7 +60,7 @@ export HISTCONTROL=ignoredups
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
 # Setup zsh-autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^o' autosuggest-accept
 
 # Load aliases
@@ -76,6 +73,7 @@ unset file
 NPM_PACKAGES=/Users/dglunz/.npm-packages
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 PATH="$NPM_PACKAGES/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -85,4 +83,5 @@ export NVM_DIR="$HOME/.nvm"
 # TMUX
 export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# Brew path
+eval "$(/opt/homebrew/bin/brew shellenv)"

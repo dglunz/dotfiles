@@ -1,1 +1,1 @@
-/Users/d/.vimrc
+/Users/dglunz/.vimrc

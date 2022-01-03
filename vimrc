@@ -134,7 +134,7 @@ set expandtab " use spaces, not tabs
 set tabstop=2 shiftwidth=2 " a tab is two spaces
 set backspace=indent,eol,start " backspace through everything in insert mode
 set scrolloff=4 " adds top/bottom buffer between cursor and window
- 
+
 "" Searching
 set hlsearch " highlight matches
 set incsearch " incremental searching
@@ -192,21 +192,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-" ShowDocIfNoDiagnostic setup (shows hover documentation when no errors exist)
-" function! ShowDocIfNoDiagnostic(timer_id)
-"   if (coc#util#has_float() == 0)
-"     silent call CocActionAsync('doHover')
-"   endif
-" endfunction
-" 
-" function! s:show_hover_doc()
-"   call timer_start(500, 'ShowDocIfNoDiagnostic')
-" endfunction
-
-" autocmd CursorHoldI * :call <SID>show_hover_doc()
-" autocmd CursorHold * :call <SID>show_hover_doc()
-" ShowDocIfNoDiagnostic
 
 " coc actions
 nmap <silent> gd <Plug>(coc-definition)
