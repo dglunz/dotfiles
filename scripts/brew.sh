@@ -19,7 +19,6 @@ brew install zsh-autosuggestions
 brew install neovim
 
 # Tmux
-brew install reattach-to-user-namespace
 brew install tmux
 brew install tmuxinator
 brew install urlview

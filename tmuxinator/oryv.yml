@@ -1,0 +1,21 @@
+# ~/.tmuxinator/oryv.yml
+
+name: oryv
+root: ~/Documents/codes/oryv
+startup_window: api
+
+windows:
+  - api:
+      root: ~/Documents/code/oryv/api
+      layout: main-horizontal
+      panes:
+        - npm run dev
+        -
+        -
+  - dashboard:
+      layout: main-horizontal
+      root: ~/Documents/code/oryv/dashboard
+      panes:
+        - npm run dev
+        -
+        -

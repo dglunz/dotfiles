@@ -122,9 +122,9 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/bower_modules/*,*/bu
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " Prettier on save
-"let g:prettier#autoformat = 0
-"let g:prettier#autoformat_config_present = 1
-"autocmd BufWritePre *.ts,*.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
+" let g:prettier#autoformat = 0
+" let g:prettier#autoformat_config_present = 1
+" autocmd BufWritePre *.ts,*.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
 
 set encoding=utf-8
 filetype plugin indent on " load file type plugins + indentation

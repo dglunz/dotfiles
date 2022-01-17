@@ -6,8 +6,12 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "typescriptsvelte",
+    "html",
+    "json"
   ],
   "tsserver.formatOnType": true,
-  "coc.preferences.formatOnType": true
+  "coc.preferences.formatOnType": true,
+  "svelte.enable-ts-plugin": true
 }

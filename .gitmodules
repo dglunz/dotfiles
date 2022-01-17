@@ -55,3 +55,9 @@
 [submodule "vim/bundle/markdown-preview.nvim"]
 	path = vim/bundle/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim.git
+[submodule "vim/bundle/coc-svelte"]
+	path = vim/bundle/coc-svelte
+	url = https://github.com/coc-extensions/coc-svelte
+[submodule "vim/bundle/vim-svelte"]
+	path = vim/bundle/vim-svelte
+	url = https://github.com/evanleck/vim-svelte

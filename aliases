@@ -26,4 +26,6 @@ alias pag="cd ~/Documents/code/pana-agent"
 alias paw="cd ~/Documents/code/pana-web"
 alias pap="cd ~/Documents/code/pana-api"
 alias pad="cd ~/Documents/code/pana-docs"
+alias ord="cd ~/Documents/code/oryv/dashboard"
+alias orp="cd ~/Documents/code/oryv/api"
 
