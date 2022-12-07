@@ -10,6 +10,9 @@ alias gpo="git push origin"
 alias gpl="git pull origin master"
 alias dply="git push heroku master && heroku run rake db:migrate && heroku restart"
 
+# Rails Aliases
+alias be="bundle exec"
+
 # Random Aliases
 alias mux="tmuxinator"
 alias notes="vim ~/.notes.txt"

@@ -44,6 +44,7 @@ RPROMPT='%(4~|%2~|%~)$(git_super_status)'
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/Users/dannyglunz/Library/Python/3.7/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rvm/bin:$PATH"
 export PATH="/usr/local/lib/node_modules/:$PATH"
 export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 
@@ -85,3 +86,9 @@ export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
 
 # Brew path
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Dev (jw tooling)
+source /opt/dev/dev.sh
+source /opt/secrets/current/dev_env_exports.sh
+export PATH="/opt/homebrew/opt/gnupg@2.2/bin:$PATH"
+export PATH="${HOME}/.pyenv/shims:${PATH}"
