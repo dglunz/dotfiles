@@ -1,4 +1,22 @@
 execute pathogen#infect()
+
+" Plug section
+" Install automatically
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+Plug 'vim-ruby/vim-ruby'
+Plug 'scrooloose/nerdtree' " Directory tree
+Plug 'kien/ctrlp.vim' " Fuzzy find
+Plug 'neoclide/coc.nvim' " Language server host
+Plug 'mileszs/ack.vim' " Search
+Plug 'vim-scripts/YankRing.vim' " Clipboard history
+" Plug 'ellisonleao/glow.nvim' " Markdown preview
+call plug#end()
+
 set runtimepath+=/usr/local/go/misc/vim
 set shell=zsh\ --login
 set nolist
@@ -107,6 +125,11 @@ let NERDTreeMapOpenVSplit = '<c-v>'
 map <C-t> :NERDTreeToggle<CR>
 let g:NERDTreeWinPos = "right"
 
+" Markdown improvements
+augroup Markdown
+  autocmd!
+  autocmd FileType markdown set wrap
+augroup END
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
@@ -155,6 +178,7 @@ cmap %% <C-R>=expand("%")<CR>
 
 " coc setup
 let g:coc_global_extensions = ['coc-tsserver', 'coc-eslint', 'coc-prettier']
+" :CocConfig opens settings
 
 " Shorten updatetime (default is 4000 ms)
 set updatetime=300
@@ -177,10 +201,23 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -206,3 +243,4 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Open bash command results in a new split
 command Exec set splitbelow | new | set filetype=sh | read !sh #
+

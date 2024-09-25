@@ -1,21 +1,9 @@
 [submodule "vim/bundle/vim-addon-mw-utils"]
   path = vim/bundle/vim-addon-mw-utils
   url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/vim-go"]
 	path = vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "vim/bundle/ack.vim"]
-	path = vim/bundle/ack.vim
-	url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/yankring"]
-	path = vim/bundle/yankring
-	url = https://github.com/vim-scripts/YankRing.vim.git
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -49,9 +37,6 @@
 [submodule "vim/bundle/typescript-vim"]
 	path = vim/bundle/typescript-vim
 	url = git@github.com:leafgarland/typescript-vim.git
-[submodule "vim/bundle/coc.nvim"]
-	path = vim/bundle/coc.nvim
-	url = git@github.com:neoclide/coc.nvim.git
 [submodule "vim/bundle/markdown-preview.nvim"]
 	path = vim/bundle/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim.git

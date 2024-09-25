@@ -1,6 +1,17 @@
 {
   "eslint.autoFixOnSave": true,
-  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "typescriptsvelte",
+    "svelte",
+    "html",
+    "json",
+    "css",
+    "ruby"
+  ],
   "prettier.disableSuccessMessage": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
@@ -8,8 +19,11 @@
     "typescript",
     "typescriptreact",
     "typescriptsvelte",
+    "svelte",
     "html",
-    "json"
+    "json",
+    "css",
+    "ruby"
   ],
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,

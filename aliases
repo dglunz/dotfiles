@@ -21,11 +21,11 @@ alias please="sudo"
 alias noise="~/zero-noise/noise.sh"
 
 # Current workflow outside of tmuxinator
-alias pas="cd ~/Documents/code/sabre-soap"
-alias pag="cd ~/Documents/code/pana-agent"
 alias paw="cd ~/Documents/code/pana-web"
 alias pap="cd ~/Documents/code/pana-api"
-alias pad="cd ~/Documents/code/pana-docs"
-alias ord="cd ~/Documents/code/oryv/dashboard"
+alias ord="cd ~/Documents/code/oryv/dash"
+alias dash="cd ~/Documents/code/oryv/dash"
+alias ora="cd ~/Documents/code/oryv/api"
 alias orp="cd ~/Documents/code/oryv/api"
+alias api="cd ~/Documents/code/oryv/api"
 

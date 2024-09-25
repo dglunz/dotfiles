@@ -14,7 +14,7 @@ windows:
         -
   - dashboard:
       layout: main-horizontal
-      root: ~/Documents/code/oryv/dashboard
+      root: ~/Documents/code/oryv/dash
       panes:
         - npm run dev
         -

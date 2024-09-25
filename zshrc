@@ -32,17 +32,15 @@ fi
 
 zplug load
 
-# Git info
-# https://github.com/olivierverdier/zsh-git-prompt
+# Prompt config - https://github.com/olivierverdier/zsh-git-prompt
 ZSH_GIT_PROMPT="$HOME/zsh-git-prompt/zshrc.sh"
 [ -s $ZSH_GIT_PROMPT ] && source $ZSH_GIT_PROMPT
-
 PROMPT='$ '
 RPROMPT='%(4~|%2~|%~)$(git_super_status)'
 
 # User configuration
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export PATH="/Users/dannyglunz/Library/Python/3.7/bin:$PATH"
+export PATH="$HOME/Library/Python/3.11/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/lib/node_modules/:$PATH"
 export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
@@ -74,6 +72,7 @@ NPM_PACKAGES=/Users/dglunz/.npm-packages
 NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 PATH="$NPM_PACKAGES/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
