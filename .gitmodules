@@ -46,3 +46,6 @@
 [submodule "vim/bundle/vim-svelte"]
 	path = vim/bundle/vim-svelte
 	url = https://github.com/evanleck/vim-svelte
+[submodule "vim/bundle/vim-rails"]
+	path = vim/bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git

@@ -4,7 +4,6 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact",
     "typescriptsvelte",
     "svelte",
     "html",
@@ -23,9 +22,21 @@
     "html",
     "json",
     "css",
-    "ruby"
+    "ruby",
+    "rspec"
   ],
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
-  "svelte.enable-ts-plugin": true
+  "svelte.enable-ts-plugin": true,
+  "languageserver": {
+    "sorbet": {
+      "enable": true,
+      "command": "srb",
+      "args": ["tc", "--lsp"],
+      "filetypes": ["ruby"],
+      "rootPatterns": ["sorbet/config"],
+      "initializationOptions": {},
+      "settings": {}
+    }
+  }
 }
