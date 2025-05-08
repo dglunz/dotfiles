@@ -2,12 +2,12 @@
 alias gs="git status"
 alias gd="git diff --patience --ignore-space-change"
 alias gco="git checkout"
-alias gcm="git checkout master"
+alias gcm="git checkout main"
 alias ga="git add"
 alias gc="git commit"
-alias gbd="git branch | grep -v 'master' | xargs git branch -D"
+alias gbd="git branch | grep -v 'main' | xargs git branch -D"
 alias gpo="git push origin"
-alias gpl="git pull origin master"
+alias gpl="git pull origin main"
 alias dply="git push heroku master && heroku run rake db:migrate && heroku restart"
 
 # Random Aliases
@@ -28,4 +28,6 @@ alias dash="cd ~/Documents/code/oryv/dash"
 alias ora="cd ~/Documents/code/oryv/api"
 alias orp="cd ~/Documents/code/oryv/api"
 alias api="cd ~/Documents/code/oryv/api"
+alias ju="cd ~/Documents/code/juno"
+alias juno="cd ~/Documents/code/juno"
 
